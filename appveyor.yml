@@ -2,7 +2,7 @@ version: 1.0.{build}
 install:
 - cmd: nuget restore
 build_script:
-- cmd: msbuild "WebApplication3\WebApplication3.csproj" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /t:Package /p:PackageLocation=%APPVEYOR_BUILD_FOLDER%myapp.zip
+- cmd: msbuild "WebApplication3\WebApplication3.csproj" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /t:Package /p:PackageLocation=%APPVEYOR_BUILD_FOLDER%\myapp.zip
 artifacts:
 - path: myapp.zip
   name: AppDeploymentName
