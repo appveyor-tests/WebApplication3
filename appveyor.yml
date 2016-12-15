@@ -1,11 +1,9 @@
 version: 1.0.{build}
 install:
-- cmd: nuget restore
+- nuget restore
 build_script:
-- cmd: msbuild "WebApplication3\WebApplication3.csproj" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /t:Package /p:PackageLocation=%APPVEYOR_BUILD_FOLDER%\myapp.zip
-artifacts:
-- path: myapp.zip
-  name: AppDeploymentName
+- msbuild "WebApplication3\WebApplication3.csproj" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /t:Package /p:PackageLocation=%APPVEYOR_BUILD_FOLDER%\myapp.zip
+- appveyor PushArtifact myapp.zip -Type WebDeployPackage -DeploymentName AppDeploymentName
 deploy:
 - provider: Environment
   name: IIS2
