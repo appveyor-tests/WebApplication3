@@ -1,6 +1,6 @@
 version: 1.0.{build}
-environment:
-  sitePath: c:\websites\fromYamlTop
+#environment:
+#  sitePath: c:\websites\fromYamlTop
 install:
 - nuget restore
 build_script:
@@ -9,7 +9,7 @@ build_script:
 deploy:
 - provider: Environment
   name: IIS2
-  sitePath: C:\websites\foo bar\website
+  sitePath: C:\websites
 - provider: WebDeploy
   server: https://ilyaf3.scm.azurewebsites.net/msdeploy.axd?site=ilyaf3
   website: ilyaf3
