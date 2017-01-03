@@ -1,4 +1,6 @@
 version: 1.0.{build}
+environment:
+  sitePath: c:\websites\fromYamlTop
 install:
 - nuget restore
 build_script:
