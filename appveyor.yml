@@ -9,7 +9,7 @@ build_script:
 deploy:
 - provider: Environment
   name: IIS2
-  sitePath: rrr
+  sitePath: c:\websites
 - provider: WebDeploy
   server: https://ilyaf3.scm.azurewebsites.net/msdeploy.axd?site=ilyaf3
   website: ilyaf3
