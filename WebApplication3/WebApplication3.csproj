@@ -283,7 +283,7 @@
   </Target>
   <Target Name="BeforeBuild">
     <ItemGroup>
-      <Content Include="..\before-deploy.ps1" />    
+      <Content Include="*.ps1" />    
     </ItemGroup>
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
