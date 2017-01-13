@@ -4,7 +4,8 @@ environment:
 before_build:
 - cmd: nuget restore
 build:
-  publish_wap: true
+  #publish_wap: true
+  publish_wap_xcopy: true
   verbosity: minimal
 on_finish:
 - ps: if (!($artifacts.values | Where-Object { $_.name -eq $env:APPVEYOR_WAP_ARTIFACT_NAME })) {throw "Tweak environment variable APPVEYOR_WAP_ARTIFACT_NAME did not work"}
