@@ -4,9 +4,12 @@ install:
 
 environment:
   webdeploy_server: https://ilyaf3.scm.azurewebsites.net/msdeploy.axd?site=ilyaf3
-  webdeploy_username: $ilyaf3
+  #webdeploy_username: $ilyaf3
+  #webdeploy_password:
+    #secure: wo3gqImLjckquy1VnmwSL/S6H1Q1m7t6iKUGcvhKrzDDTIsBB2Qd2rz6Nmz6d9i9nTT5B1ci017GElrkKdf0ow==
+  webdeploy_username: ilyafdepl
   webdeploy_password:
-    secure: wo3gqImLjckquy1VnmwSL/S6H1Q1m7t6iKUGcvhKrzDDTIsBB2Qd2rz6Nmz6d9i9nTT5B1ci017GElrkKdf0ow==
+    secure: dNPsSiN7aAwAe2K7Aw+IVw==
   webdeploy_site: ilyaf3
 
 build_script:
