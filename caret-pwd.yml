@@ -9,7 +9,7 @@ environment:
     #secure: wo3gqImLjckquy1VnmwSL/S6H1Q1m7t6iKUGcvhKrzDDTIsBB2Qd2rz6Nmz6d9i9nTT5B1ci017GElrkKdf0ow==
   webdeploy_username: ilyafdepl
   webdeploy_password:
-    secure: dNPsSiN7aAwAe2K7Aw+IVw==
+    secure: OlU0u7il7aW0f2bMjTy13A==
   webdeploy_site: ilyaf3
 
 build_script:
