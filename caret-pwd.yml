@@ -21,4 +21,4 @@ deploy_script:
   - echo %webdeploy_package%
   #- '"C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -verb:sync -source:package="%webdeploy_package%" -dest:auto,ComputerName="%webdeploy_server%",UserName="%webdeploy_username%",Password="%webdeploy_password%",AuthType="Basic" -setParam:"IIS Web Application Name"="%webdeploy_site%" -allowUntrusted'
   
-  - ps: iex '"C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -verb:sync -source:package="$env:webdeploy_package" -dest:auto,ComputerName="$env:webdeploy_server",UserName="$env:webdeploy_username",Password="$env:webdeploy_password",AuthType="Basic" -setParam:"IIS Web Application Name"="$env:webdeploy_site" -allowUntrusted'
+  - powershell "C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -verb:sync -source:package="$env:webdeploy_package" -dest:auto,ComputerName="$env:webdeploy_server",UserName="$env:webdeploy_username",Password="$env:webdeploy_password",AuthType="Basic" -setParam:"IIS Web Application Name"="$env:webdeploy_site" -allowUntrusted
