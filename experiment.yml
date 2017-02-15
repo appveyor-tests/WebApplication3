@@ -19,5 +19,5 @@ deploy_script:
 
     $exe = "C:\Program Files (x86)\AWS Tools\Deployment Tool\awsdeploy.exe"
 
-    &$exe -r "-DDeploymentPackage=$($packageweb.path)" "-DEnvironment.Name=Sample-env" "-DApplication.Name=myapp" "-DRegion=eu-west-1" "-DAWSAccessKey=$env:AWSAccessKeyId" "-DAWSSecretKey=$env:AWSSecretKey" "C:\projects\WebApplication3\awsdeploy.txt"
+    &$exe -r "-DDeploymentPackage=$($packageweb.path)" "-DEnvironment.Name=Sample-env" "-DApplication.Name=my-startup-app" "-DRegion=us-west-2" "-DAWSAccessKey=$env:AWSAccessKeyId" "-DAWSSecretKey=$env:AWSSecretKey" "C:\projects\WebApplication3\awsdeploy.txt"
   
