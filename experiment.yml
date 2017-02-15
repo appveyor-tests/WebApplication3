@@ -12,7 +12,9 @@ build_script:
 - appveyor PushArtifact myapp.zip -Type WebDeployPackage -DeploymentName AppDeploymentName
 
 deploy_script:
-  - ps: |
-    $packageweb = $artifacts.values | Where-Object { $_.path -like '*app.zip' }
-    $exe = "C:\Program Files (x86)\AWS Tools\Deployment Tool\awsdeploy.exe"
-    &$exe -r "-DDeploymentPackage=$($packageweb.path)" "-DEnvironment.Name=Sample-env" "-DApplication.Name=my-startup-app" "-DRegion=eu-west-1" "-DAWSAccessKey=$env:AWSAccessKeyId" "-DAWSSecretKey=$env:AWSSecretKey" "C:\projects\WebApplication3\awsdeploy.txt"
+- ps: >-
+  $packageweb = $artifacts.values | Where-Object { $_.path -like '*app.zip' }
+  
+  $exe = "C:\Program Files (x86)\AWS Tools\Deployment Tool\awsdeploy.exe"
+  
+  &$exe -r "-DDeploymentPackage=$($packageweb.path)" "-DEnvironment.Name=Sample-env" "-DApplication.Name=my-startup-app" "-DRegion=eu-west-1" "-DAWSAccessKey=$env:AWSAccessKeyId" "-DAWSSecretKey=$env:AWSSecretKey" "C:\projects\WebApplication3\awsdeploy.txt"
