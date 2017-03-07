@@ -1,6 +1,5 @@
 write-host "calling before-deploy.ps1"
-write-host $myVar
 write-host $env:myVar
-write-host "Getting env var..."
-Get-ChildItem Env:
+#write-host "Getting env var..."
+#Get-ChildItem Env:
 
