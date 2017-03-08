@@ -10,3 +10,4 @@ deploy:
   name: IIS2
   sitePath: C:\websites\foo bar\website
   myVar: myVal
+  applicationName: Bla
