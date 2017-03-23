@@ -14,4 +14,4 @@ deploy:
   password:
     secure: wo3gqImLjckquy1VnmwSL/S6H1Q1m7t6iKUGcvhKrzDDTIsBB2Qd2rz6Nmz6d9i9nTT5B1ci017GElrkKdf0ow==
   artifact: AppDeploymentName
-  skip_files: '^\.\\Web\.config'
+  skip_files: '^ilyaf3.\\Web\.config$'
