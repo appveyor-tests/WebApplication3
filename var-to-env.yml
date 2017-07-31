@@ -9,3 +9,4 @@ deploy:
   name: ilyaf4
   siteName: $(siteName)
   hostName: $(hostName)
+  pwd: $(pwd)
