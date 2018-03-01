@@ -1,0 +1,18 @@
+version: 1.0.{build}
+install:
+- cmd: choco install octopustools
+before_build:
+- cmd: nuget restore
+build:
+  publish_wap_octopus: true
+  verbosity: minimal
+deploy:
+- provider: Octopus
+  push_packages: true
+  create_release: true
+  deploy_release: true
+  server: http://ilyaf-octopus.southcentralus.cloudapp.azure.com
+  api_key:
+    secure: utlUlXs78tHwzCNxjVJ+yVjEkX2xJPQcT+CWcmwPCDc=
+  environment: IIS
+  deploy_wait: false
