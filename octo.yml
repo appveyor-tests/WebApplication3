@@ -9,7 +9,7 @@ build:
 deploy:
 - provider: Octopus
   push_packages: true
-  create_release: true
+  #create_release: true
   deploy_release: true
   server: http://ilyaf-octopus.southcentralus.cloudapp.azure.com
   api_key:
