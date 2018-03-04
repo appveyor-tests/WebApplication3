@@ -8,11 +8,15 @@ build:
   verbosity: minimal
 deploy:
 - provider: Octopus
-  #push_packages: true
+  push_packages: true
   create_release: true
   deploy_release: true
   server: http://ilyaf-octopus.southcentralus.cloudapp.azure.com
   api_key:
-    secure: utlUlXs78tHwzCNxjVJ+yVjEkX2xJPQcT+CWcmwPCDc=
+    # staging
+    # secure: utlUlXs78tHwzCNxjVJ+yVjEkX2xJPQcT+CWcmwPCDc=
+    
+    # prod
+    secure: 2/4en5icdSVgyNMjp5wkckTC9NyIYkWElMkmDP+xg98=
   environment: IIS
   deploy_wait: false
