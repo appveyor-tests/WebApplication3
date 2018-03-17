@@ -1,0 +1,19 @@
+version: 1.0.{build}
+install:
+- cmd: nuget restore
+before_build:
+- ps: |
+    $newContent = (Get-Content WebApplication3/Views/Home/Index.cshtml).Replace("ASP.NET430", "ASP.NET-$env:APPVEYOR_BUILD_NUMBER")
+    Set-Content -Value $newContent -Path  WebApplication3/Views/Home/Index.cshtml
+build:
+  publish_wap_beanstalk: true
+  verbosity: minimal
+deploy:
+- provider: ElasticBeanstalk
+  access_key_id: AKIAIHX6TB6ZCZYYIMNQ
+  secret_access_key:
+    secure: NnrFVaLaxMeZZg5X+1MbT0gJKX60tYHKUHCyqBg7eUmptMXCX8Tj32WaTQN9khca
+  application_name: WebApplicationEB3
+  environment_name: WebApplicationEB3-dev3
+  region: eu-west-1
+  healthcheck: /Home/Contact
