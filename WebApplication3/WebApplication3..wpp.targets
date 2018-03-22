@@ -2,10 +2,13 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ExcludeApp_Data>True</ExcludeApp_Data>
-    <DeleteExistingFiles>True</DeleteExistingFiles>
-    <PrecompileBeforePublish>True</PrecompileBeforePublish>
-    <EnableUpdateable>False</EnableUpdateable>
-    <DebugSymbols>False</DebugSymbols>
-    <WDPMergeOption>DonotMerge</WDPMergeOption>
+      <DeleteExistingFiles>True</DeleteExistingFiles>
+      <PrecompileBeforePublish>True</PrecompileBeforePublish>
+      <EnableUpdateable>False</EnableUpdateable>
+      <DebugSymbols>False</DebugSymbols>
+      <WDPMergeOption>DonotMerge</WDPMergeOption>
+      <UseMerge>True</UseMerge>
+      <SingleAssemblyName>CompiledViews</SingleAssemblyName>
+      <MvcBuildViews>False</MvcBuildViews>
   </PropertyGroup>
 </Project>
