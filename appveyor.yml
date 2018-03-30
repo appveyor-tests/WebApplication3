@@ -1,31 +1,6 @@
-version: 1.0.{build}
-environment:
-  artifactName: $(APPVEYOR_BUILD_VERSION)-$(APPVEYOR_REPO_COMMIT).zip
-install:
-- appveyor-retry nuget restore
-#nuget issue workaround
-hosts:
-  api.nuget.org: 93.184.221.200
-  
-build_script:
-- msbuild "WebApplication3\WebApplication3.csproj" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /t:Package /p:PackageLocation=%APPVEYOR_BUILD_FOLDER%\%artifactName%
-- appveyor PushArtifact %artifactName% -Type WebDeployPackage -DeploymentName AppDeploymentName
-deploy:
-- provider: Environment
-  name: IIS2
-  sitePath: C:\websites\foo bar\website
-- provider: WebDeploy
-  server: https://ilyaf3.scm.azurewebsites.net/msdeploy.axd?site=ilyaf3
-  website: ilyaf3
-  #website: ilyaf3/vApp1
-  username: $ilyaf3
-  password:
-    #appveyor
-    #secure: wo3gqImLjckquy1VnmwSL/S6H1Q1m7t6iKUGcvhKrzDDTIsBB2Qd2rz6Nmz6d9i9nTT5B1ci017GElrkKdf0ow==
-    
-    #local
-    secure: 4gEVEHbCQYtb2NhnPi09aX78O/QugL4TXDWSfGMsEvIV0GTnQalxSNGJz9aJ6Ufu1p9eFvsUjDA1R0vKnzOtPQ==
-  artifact: AppDeploymentName
+before_build:
+- cmd: nuget restore
 
-- provider: Local
-  AppDeploymentName.deploy_website: true
+build:
+  publish_wap: true
+  verbosity: normal
